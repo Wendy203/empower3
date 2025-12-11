@@ -29,7 +29,7 @@ function Login() {
       navigate('/home');
     } catch (err) {
       setError(
-        err.response?.data?.error || 'Error al iniciar sesión. Verifica tus credenciales.'
+        err.response?.data?.error || err.message || 'Error al iniciar sesión. Verifica tus credenciales.'
       );
     } finally {
       setLoading(false);

@@ -72,8 +72,21 @@ docker-compose down
 - **Backend API**: http://localhost:5000
 - **Health Check**: http://localhost:5000/health
 - **Base de Datos**: localhost:5432
+- **Adminer (GUI Base de Datos)**: http://localhost:8080
 
 ---
+
+## 🗄️ Administrar Base de Datos
+
+Para ver y editar los datos directamente:
+
+1. Entra a **http://localhost:8080**
+2. Usa estas credenciales:
+   - **Sistema**: `PostgreSQL`
+   - **Servidor**: `postgres`
+   - **Usuario**: `empower_user`
+   - **Contraseña**: `empower_secure_password_2025`
+   - **Base de datos**: `empower_db`
 
 ## ❓ Problemas comunes
 
