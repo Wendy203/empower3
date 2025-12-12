@@ -17,6 +17,7 @@ yarn-error.log*
 
 # Database
 *.sql
+!database/init.sql
 *.sqlite
 pgdata/
 
