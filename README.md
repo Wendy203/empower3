@@ -99,18 +99,35 @@ Para detener y eliminar volúmenes (⚠️ **esto borrará todos los datos**):
 docker-compose down -v
 ```
 
-## Credenciales de Prueba
+## Primeros Pasos
 
-El sistema incluye un usuario de ejemplo para pruebas:
+### Crear tu primer usuario
 
-- **Email**: `maria.gonzalez@queretaro.tecnm.mx`
-- **Contraseña**: `Test123`
+La aplicación **NO incluye usuarios de prueba** pre-cargados. Para comenzar a usar Empower:
 
-Este usuario tiene puntos pre-cargados:
-- Plástico: 150 puntos
-- Cartón: 220 puntos
-- Aluminio: 80 puntos
-- **Total**: 450 puntos
+1. Accede a **http://localhost:3000**
+2. Haz clic en **"Registrarse"**
+3. Completa el formulario de registro con tus datos
+4. Inicia sesión con las credenciales que creaste
+
+**Nota**: Los nuevos usuarios comienzan con 0 puntos en todas las categorías.
+
+### Limpiar datos de prueba (opcional)
+
+Si necesitas eliminar usuarios de prueba de la base de datos:
+
+```bash
+# Acceder a la base de datos
+docker exec -it empower-db psql -U empower_user -d empower_db
+
+# Eliminar un usuario específico (esto también elimina sus puntos automáticamente)
+DELETE FROM usuarios WHERE correo = 'usuario@ejemplo.com';
+
+# Salir de PostgreSQL
+\q
+```
+
+O usa **Adminer** (interfaz gráfica) en **http://localhost:8080** para gestionar los datos visualmente.
 
 ## API Endpoints
 
